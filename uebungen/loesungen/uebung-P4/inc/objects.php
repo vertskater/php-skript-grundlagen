@@ -1,7 +1,7 @@
 <?php
-require_once '../uebung-P4/TeamLeader.php';
-require_once '../uebung-P4/Developer.php';
-require_once '../uebung-P4/Project.php';
+require_once dirname( __DIR__ ) . '/TeamLeader.php';
+require_once dirname( __DIR__ ) . '/Developer.php';
+require_once dirname( __DIR__ ) . '/Project.php';
 
 // Erstelle Objekt Instanzen
 $claudia    = new TeamLeader( 'Claudia Leader', 'claudia.leader@company.at' );

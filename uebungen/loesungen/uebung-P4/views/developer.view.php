@@ -1,6 +1,7 @@
 <?php
-include 'header.php';
-require_once 'inc/objects.php';
+$css_path = '../pico.classless.min.css';
+include '../header.php';
+include_once dirname( __DIR__ ) . '/inc/objects.php';
 if ( isset( $henrik_dev ) ) {
 	$dev = $henrik_dev;
 }
@@ -19,6 +20,6 @@ if ( isset( $henrik_dev ) ) {
 			}
 			?>
     </ul>
-    <a href="index.php"><-- Back to Main</a>
+    <a href="../index.php"><-- Back to Main</a>
 </main>
-<?php include 'footer.php' ?>
+<?php include dirname( __DIR__ ) . '/footer.php' ?>
