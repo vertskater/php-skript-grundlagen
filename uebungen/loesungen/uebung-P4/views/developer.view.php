@@ -23,3 +23,4 @@ if ( isset( $henrik_dev ) ) {
     <a href="../index.php"><-- Back to Main</a>
 </main>
 <?php include dirname( __DIR__ ) . '/footer.php' ?>
+

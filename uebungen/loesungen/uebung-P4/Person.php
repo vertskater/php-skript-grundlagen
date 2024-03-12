@@ -1,7 +1,7 @@
 <?php
 declare( strict_types=1 );
 
-
+//Abstrakte Klasse Person
 abstract class Person {
 	public function __construct(
 		protected string $name,

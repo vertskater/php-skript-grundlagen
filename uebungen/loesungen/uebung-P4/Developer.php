@@ -38,3 +38,4 @@ class Developer extends Person implements IDeveloper {
 		return $assignedProjects;
 	}
 }
+

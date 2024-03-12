@@ -34,4 +34,6 @@ interface IProject {
 	public function getStatus(): bool;
 
 	public function getId(): string;
+
+	public function getName(): string;
 }

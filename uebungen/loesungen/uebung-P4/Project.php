@@ -1,5 +1,4 @@
 <?php
-require_once 'TeamLeader.php';
 
 class Project implements IProject {
 	private string $id;
@@ -45,3 +44,4 @@ class Project implements IProject {
 		return $this->name;
 	}
 }
+

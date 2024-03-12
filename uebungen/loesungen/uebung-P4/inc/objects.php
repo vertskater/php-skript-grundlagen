@@ -3,8 +3,9 @@ require_once dirname( __DIR__ ) . '/TeamLeader.php';
 require_once dirname( __DIR__ ) . '/Developer.php';
 require_once dirname( __DIR__ ) . '/Project.php';
 
-// Erstelle Objekt Instanzen
-$claudia    = new TeamLeader( 'Claudia Leader', 'claudia.leader@company.at' );
+// Erstelle Objekt Instanzen von Teamleader
+$claudia = new TeamLeader( 'Claudia Leader', 'claudia.leader@company.at' );
+// Erstelle Objekt Instanzen von Developer und füge Skills hinzu
 $henrik_dev = new Developer( 'Henrik Dev', 'henrik.dev@company.at' );
 $henrik_dev->addSkill( 'PHP' );
 $henrik_dev->addSkill( 'Backend' );
@@ -21,6 +22,6 @@ $claudia->setDeveloper( $henrik_dev, $claudia->getProjects()[0]->getId() );
 $claudia->setDeveloper( $amilia_dev, $claudia->getProjects()[0]->getId() );
 $claudia->setDeveloper( $henrik_dev, $claudia->getProjects()[3]->getId() );
 $claudia->setDeveloper( $amilia_dev, $claudia->getProjects()[4]->getId() );
-
+// Fortschritt der Projekte
 $henrik_dev->progress( $henrik_dev->getAssignedProjects( $claudia->getProjects() )[0], 50 );
 $amilia_dev->progress( $amilia_dev->getAssignedProjects( $claudia->getProjects() )[1], 76 );
