@@ -2,9 +2,19 @@
 $css_path = '../pico.classless.min.css';
 include '../header.php';
 include_once dirname( __DIR__ ) . '/inc/objects.php';
-if ( isset( $henrik_dev ) ) {
-	$dev = $henrik_dev;
+
+if ( isset( $_GET['name'] ) && isset( $claudia ) ) {
+	foreach ( $claudia->getProjects() as $project ) {
+		foreach ( $project->getDevelopers() as $current_dev ) {
+			if ( str_replace( " ", "", $current_dev->getName() ) === $_GET['name'] ) {
+				$dev = $current_dev;
+			}
+		}
+	}
+} else {
+	$dev = null;
 }
+
 ?>
 <main style="padding: 0">
     <h3><?= $dev->getName(); ?></h3>
