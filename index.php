@@ -1,31 +1,43 @@
 <?php
-// Start einer neuen Session oder auslesen der Session Datei
-session_start();
-// Auslesen des Counter-Wertes aus der Session Datei oder setzen auf 0
-$counter = $_SESSION['counter'] ?? 0;
-$counter ++;
-// Speichern des Counter-Wertes in der Session Datei
-$_SESSION['counter'] = $counter;
-?>
 
-    <!DOCTYPE html>
-    <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>Session Counter</title>
-    </head>
-    <body>
-    <h1>Session Counter</h1>
-    <p>Seite wurde <?php echo $counter; ?> mal aufgerufen.</p>
-    </body>
-    </html>
+function doSomethingWithArray( array $array, callable $cb ) {
+	foreach ( $array as $key => $value ) {
+		$cb( $key, $value );
+	}
+}
 
-<?php
-$_SESSION = [];
-$params   = session_get_cookie_params();
-// session_name() = PHPSESSID
-setcookie( session_name(), '', time() - 42000,
-	$params["path"], $params["domain"],
-	$params["secure"], $params["httponly"]
-);
-session_destroy();
+/*function printArray( $key, $value ) {
+	echo $key . ' => ' . $value . PHP_EOL;
+}*/
+
+doSomethingWithArray( [ 'a' => 1, 'b' => 2, 'c' => 3 ], function ( $key, $value ) {
+	echo $key . ' => ' . $value . PHP_EOL;
+} );
+
+
+$nums = [ 98, 23, 54, 12, 20, 7, 27, 19, 33, 45 ];
+
+function summe( $carry, $item ) {
+	return $carry += $item;
+}
+
+function product( $carry, $item ) {
+	return $carry *= $item;
+}
+
+$summe   = array_reduce( $nums, 'summe' );
+$product = array_reduce( $nums, 'product', 1 );
+
+echo 'Summe: ' . $summe . PHP_EOL;
+echo 'Produkt: ' . $product . PHP_EOL;
+
+
+function custom_array_reduce( array $array, callable $cb, $initial = 0 ) {
+	$accumulator = $initial;
+	foreach ( $array as $item ) {
+		$accumulator = $cb( $accumulator, $item ); // $accumulator = $accumulator + $item ($carry, $item)
+	}
+
+	return $carry;
+}
+
