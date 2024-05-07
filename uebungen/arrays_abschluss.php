@@ -43,21 +43,6 @@ $numbers = [
 	'89'
 ];
 
+$random_nums = "4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 99, 34, 56, 78, 90, 23, 45, 67, 89, 12, u, 56, 34, 90, 87, 65, 43, 21, 76, 98, 54, 32, 10, 9, 89";
 
-
-
-
-//Aufgabe 1:
-//Filtern Sie aus dem Array $conponents alle Städte heraus, die mit dem Buchstaben 'l' beginnen und speichern Sie diese in einem neuen indexbasiertem Array $cities
-//Ergebnis: Array( [0] => 'london', [1] => 'lisbon' )
-
-
-//Aufgabe 2:
-//Erstellen Sie aus dem Array $components ein neues assoziatives Array das den Stadtnamen als key und die Länge des Stadtnamens als value enthält.
-//z. B. ['london' => 6, 'paris' => 5, ...]
-
-
-//Aufgabe 3:
-//Erstellen Sie aus dem Array $components ein neues assoziatives Array, dass als Value ein indexbasiertes Array enthält, das die einzelnen Buchstaben des Stadtnamens enthält.
-//z. B. ['london' => ['l', 'o', 'n', 'd', 'o', 'n'], 'paris' => ['p', 'a', 'r', 'i', 's'], ...]
 

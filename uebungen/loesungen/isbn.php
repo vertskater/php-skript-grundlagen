@@ -13,6 +13,5 @@ for ( $i = 0; $i < 12; $i ++ ) {
 		$summe += $isbn[ $i ] * 3;
 	}*/
 }
-
 $gegen_pruefung = 10 - (int) substr( $summe, - 1 );
 echo $pruef_ziffer == $gegen_pruefung ? 'ISBN ist korrekt' : 'ISBN ist falsch';
